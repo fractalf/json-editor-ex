@@ -1,0 +1,43 @@
+html {
+    background-color: #153567;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+html, body, #left, #right {
+    height: 100%;
+    margin: 0;
+}
+
+.header {
+    padding: 0.2em;
+    font-family: arial,sans-serif;
+    font-size: 0.8em;
+}
+.header .content {
+    display: flex;
+    justify-content: space-around;
+}
+.header .content a {
+    color: #fff;
+    opacity: 0.8;
+    text-decoration: none;
+}
+.header .content a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#left, #right {
+    width: 49.8%;
+}
+
+.jsoneditor .jsoneditor-text-errors tr.parse-error {
+    background-color: #e99e9e;
+}

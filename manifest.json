@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "JSON Editor Extension",
+  "version": "1.0",
+  "description": "A JSON Editor Extension based on the amazing JSON Editor Online (https://github.com/josdejong/jsoneditor)",
+  "background": {
+    "scripts": ["main.js"]
+  },
+  "icons": {
+    "128": "img/icon.png"
+  },
+  "browser_action": {
+    "browser_style": true,
+    "default_icon": "img/icon.png",
+    "default_title": "JSON Editor Extension"
+  }
+}
