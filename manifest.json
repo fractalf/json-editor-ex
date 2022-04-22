@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "JSON Editor Extension",
-  "version": "1.1",
+  "version": "1.2",
   "description": "A JSON Editor Extension based on the amazing JSON Editor Online (https://github.com/josdejong/jsoneditor)",
   "background": {
     "scripts": ["main.js"]
