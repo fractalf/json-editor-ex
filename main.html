@@ -3,23 +3,26 @@
 
 <head>
     <meta charset="utf-8">
-    <link href="jsoneditor.min.css" rel="stylesheet" type="text/css">
+    <link href="/lib/jse-theme-dark.css" rel="stylesheet" type="text/css">
     <link href="main.css" rel="stylesheet" type="text/css">
-    <script src="jsoneditor.min.js"></script>
 </head>
 
-<body>
+<body class="jse-theme-dark">
     <div class="header">
         <div class="content">
-            <a href="https://github.com/fractalf/json-editor-ex" target="_blank">JSON Editor Extension v1.2</a>
-            <a href="https://github.com/josdejong/jsoneditor" target="_blank">Based on JSON Editor Online v9.7.4</a>
+            <span>
+                <a href="https://github.com/fractalf/json-editor-ex" target="_blank">JSON Editor Extension v2.0.0</a>
+            </span>
+            <span>
+                <a href="https://github.com/josdejong/svelte-jsoneditor" target="_blank">Based on JSON Editor Online v0.18.3</a>
+            </span>
         </div>
     </div>
     <div class="container">
         <div id="left"></div>
         <div id="right"></div>
     </div>
-    <script src="init.js"></script>
+    <script type="module" src="init.js"></script>
 </body>
 
 </html>

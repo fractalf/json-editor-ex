@@ -1,37 +1,39 @@
-const left = document.getElementById('left')
-const right = document.getElementById('right')
+import { JSONEditor } from '/lib/index.js'
 
-const optionsLeft = {
-    mode: 'code',
-    onChangeText: function (json) {
-        if (json) {
-            editorRight.setText(json)
-        }
-    },
-    ajv: JSONEditor.Ajv({
-        allErrors: true,
-        verbose: true,
-        jsonPointers: false,
-        $data: true
-    })
-}
-const optionsRight = {
-    mode: 'tree',
-    onChangeJSON: function (json) {
-        editorLeft.set(json)
+let content = {
+    text: undefined,
+    json: {
+        array: [1, 2, 3],
+        boolean: true,
+        color: '#82b92c',
+        null: null,
+        number: 123,
+        object: { a: 'b', c: 'd' },
+        time: 1575599819000,
+        string: 'Foo Bar',
+        json: "{\n    a: 1,\n    b: 2,\n    c: 3\n}"
     },
 }
 
-const initialJson = {
-    Array: [1, 2, 3],
-    Boolean: true,
-    Null: null,
-    Number: 123,
-    Object: { 'a': 'b', 'c': 'd' },
-    String: 'Hello World'
-}
-
-const editorLeft = new JSONEditor(left, optionsLeft, initialJson)
-const editorRight = new JSONEditor(right, optionsRight, initialJson)
-
-editorLeft.errorTable.errorTableVisible = true
+const editorLeft = new JSONEditor({
+    target: document.getElementById('left'),
+    props: {
+        content,
+        mode: 'text',
+        askToFormat: false,
+        onChange: (updatedContent) => {
+            editorRight.set(updatedContent)
+        },
+    },
+})
+const editorRight = new JSONEditor({
+    target: document.getElementById('right'),
+    props: {
+        content,
+        mode: 'tree',
+        navigationBar: false,
+        onChange: (updatedContent) => {
+            editorLeft.set(updatedContent)
+        },
+    },
+})
