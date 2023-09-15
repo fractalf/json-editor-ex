@@ -15,7 +15,7 @@ html, body {
 }
 .header .content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 10fr 1fr 10fr;
     text-align: center;
 }
 .header .content a {
@@ -44,4 +44,53 @@ html, body {
 .jse-menu > *:nth-child(4)
 {
     display: none;
+}
+
+/* Togle light/dark mode */
+#switch {
+    position: relative;
+    display: none;
+    width: 36px;
+    height: 17px;
+}
+#switch input {
+    display:none;
+    /* margin-left: 50px; */
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1e1e1e;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #3883FA;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+.slider.round {
+    border-radius: 17px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+input:checked + .slider {
+    background-color: #3883FA;
+}
+input:checked + .slider:before {
+    background-color: #fff;
+    -webkit-transform: translateX(19px);
+    -ms-transform: translateX(19px);
+    transform: translateX(19px);
 }

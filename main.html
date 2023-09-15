@@ -8,21 +8,33 @@
 </head>
 
 <body class="jse-theme-dark">
+
     <div class="header">
         <div class="content">
             <span>
                 <a href="https://github.com/fractalf/json-editor-ex" target="_blank">JSON Editor Extension v2.0.0</a>
             </span>
+
+            <span>
+                <label id="switch">
+                    <input id="mode" type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </span>
+
             <span>
                 <a href="https://github.com/josdejong/svelte-jsoneditor" target="_blank">Based on JSON Editor Online v0.18.3</a>
             </span>
         </div>
     </div>
+
     <div class="container">
         <div id="left"></div>
         <div id="right"></div>
     </div>
+
     <script type="module" src="init.js"></script>
+
 </body>
 
 </html>

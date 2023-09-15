@@ -37,3 +37,36 @@ const editorRight = new JSONEditor({
         },
     },
 })
+
+// Avoid flicker
+document.getElementById('switch').style.display = 'inline-block'
+
+// Get toggle element and add click event
+const $mode = document.getElementById('mode')
+$mode.onclick = (event) => {
+    const mode = event.target.checked ? 'light' : 'dark'
+    toggleMode(mode)
+    localStorage.setItem('mode', mode);
+};
+
+// Handle local storage
+const currentMode = localStorage.getItem('mode') || 'dark'
+if (currentMode === 'dark') {
+    if ($mode.checked) {
+        $mode.checked = false
+        toggleMode(mode)
+    }
+} else {
+    $mode.checked = true
+    toggleMode(mode)
+}
+
+function toggleMode(mode) {
+    if (mode === 'dark') {
+        if (!document.className) {
+            document.body.classList.add('jse-theme-dark')
+        }
+    } else {
+        document.body.classList.remove('jse-theme-dark')
+    }
+}
