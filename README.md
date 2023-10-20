@@ -4,7 +4,7 @@ Current version is `v2.0.0`
 
 Install it from the Mozilla add-ons here: https://addons.mozilla.org/en-US/firefox/addon/json-editor-ex/
 
-This extension is basically just a wrapper around the awesome open source project [JSON Editor Online](https://github.com/josdejong/svelte-jsoneditor) `v0.18.3`
+This extension is basically just a wrapper around the awesome open source project [JSON Editor Online](https://github.com/josdejong/svelte-jsoneditor) `v0.18.10`
 
 
 The third party files included in this extension are build like this:
@@ -12,7 +12,7 @@ The third party files included in this extension are build like this:
 ```sh
 $ git clone https://github.com/josdejong/svelte-jsoneditor
 $ cd svelte-jsoneditor
-$ git checkout v0.18.3
+$ git checkout v0.18.10
 $ npm install
 $ npm run build
 
